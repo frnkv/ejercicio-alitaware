@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Equipo</th>
+        <th scope="col">Usuario que realizo el pago</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Usuarios asociados</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of payments">
+        <td>{{ p.id }}</td>
+
+        <td>{{ p.user.name }} {{ p.user.surname }}</td>
+
+        <td>{{ obtenerNombreServicio(p) }}</td>
+
+        <td>{{ obtenerUsuariosAsociados(p) }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

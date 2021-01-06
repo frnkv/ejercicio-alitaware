@@ -1,0 +1,20 @@
+<div class="container">
+  <form>
+    <mat-form-field>
+      <input type="text"
+             placeholder="Busca un usuario!"
+             matInput
+             [formControl]="inputControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete [displayWith]="optionToDisplay" autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selectedOption($event)">
+        <mat-option *ngFor="let user of filteredOptions | async" [value]="user">
+          {{ user.name }} {{user.surname }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+
+  <div id="map" class="map"></div>
+
+</div>
